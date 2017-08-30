@@ -1,0 +1,55 @@
+.react-web{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.login-page{
+  height: 100vh;
+  width: 100vw;
+}
+.login-box{
+  position: relative;
+  border: 1px solid;
+  border-radius: 15px;
+  width: 60%;
+  margin-top: 20%;
+}
+.login-title{
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.login-btn{
+  text-align: center;
+}
+.login-error{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+  color: red;
+}
+.student-title{
+  font-size: 24px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.add-student-btn{
+  text-align: center;
+  padding-top: 30px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

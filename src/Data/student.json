@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Michael",
+        "id": 1,
+        "subject": "History"
+    },
+    {
+        "name": "Jacob",
+        "id": 2,
+        "subject": "science"
+    },
+    {
+        "name": "alex",
+        "id": 3,
+        "subject": "Math"
+    },
+    {
+        "name": "Tyler",
+        "id": 4,
+        "subject": "geometry"
+    },
+    {
+        "name": "andrew",
+        "id": 5,
+        "subject": "stats"
+    },
+    {
+        "name": "Daniel",
+        "id": 6,
+        "subject": "social sci"
+    },
+    {
+        "name": "John",
+        "id": 7,
+        "subject": "Geography"
+    },
+    {
+        "name": "Matthew",
+        "id": 8,
+        "subject": "history"
+    },
+    {
+        "name": "Ryan",
+        "id": 9,
+        "subject": "Math"
+    },
+    {
+        "name": "Austin",
+        "id": 10,
+        "subject": "science"
+    }
+]
