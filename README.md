@@ -3,5 +3,5 @@
 2. npm start to run application
 
 ```Login Credentials
-Username: 'sachin@gmail.com'
-Password: 123456
+Username: 'anoop100singh@gmail.com'
+Password: 'qwerty'
