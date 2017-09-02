@@ -30,8 +30,16 @@ class Login extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.isLogin === true) {
             hashHistory.push('home');
-        } else if (nextProps.isLogin === false) {
+        } else if (nextProps.isLogin === null) {
             this.setState({ error: 'Wrong Username or Password'});
+        }
+    }
+
+    componentDidMount()
+    {
+        if(localStorage.getItem('isLogin'))
+        {
+          hashHistory.push('home');
         }
     }
     async attemptLogin(ev) {

@@ -4,7 +4,9 @@ import { Col, Row, Button, Modal } from 'react-bootstrap';
 import { Input } from 'react-toolbox/lib/input';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { hashHistory } from 'react-router';
 import { addStudent, editStudentDetails, deleteStudentDetail } from '../Actions/Student'
+import { logOutUser } from '../Actions/Login'
 
 const inputStyle = {
     marginLeft: 'auto',
@@ -32,20 +34,21 @@ class Home extends React.Component {
     componentDidMount()
     {
         const studentData = JSON.parse(localStorage.getItem('studentDetails'))
-        if(studentData)
-        this.setState({
-                studentData
-            })
+        localStorage.setItem('isLogin',true)
     }
     componentWillReceiveProps(nextProps)
     {
-        
         if(nextProps.students != this.props.students)
         {
             localStorage.setItem("studentDetails", JSON.stringify(nextProps.students));
             this.setState({
                 studentData: nextProps.students
             })
+        }
+        if(nextProps.isLogin == false)
+        {
+            localStorage.removeItem('studentDetails')
+            hashHistory.push('login');
         }
     }
     editStudent(value,index) {
@@ -70,6 +73,10 @@ class Home extends React.Component {
     editDetails() {
         this.props.editStudentDetails(this.state.name, this.state.subject, this.state.editIndex);
         this.setState({ active: false });
+    }
+    removeLocalData()
+    {
+        this.props.logOutUser()
     }
     render() {
         const { students } = this.props;
@@ -101,6 +108,12 @@ class Home extends React.Component {
                         type="button"
                         onClick={this.openAddStudent}>
                         Add
+                    </Button>
+                    <Button
+                        className="btn btn-md btn-primary log-button-style"
+                        type="button"
+                        onClick={this.removeLocalData.bind(this)}>
+                        logout
                     </Button>
                 </Col>
                 <Col className="static-modal">
@@ -153,6 +166,7 @@ class Home extends React.Component {
 const mapStateToProps = (state) => {
     return {
         students: state.Student,
+        isLogin: state.authentication.isLogin,
     };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -165,6 +179,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       deleteStudentDetail: (index) => {
           dispatch(deleteStudentDetail(index))
+      },
+      logOutUser: () => {
+          dispatch(logOutUser())
       }
   }
 }  

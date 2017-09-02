@@ -53,3 +53,11 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.log-button-style {
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  margin-top: 10px;
+  margin-right: 10px;
+}

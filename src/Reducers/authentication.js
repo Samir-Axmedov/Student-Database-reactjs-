@@ -12,6 +12,10 @@ const authReducer = (state = userState, action) => {
       return Object.assign({}, state, {
         isLogin: action.response
       });
+    case 'LOG_OUT' :
+      return Object.assign({}, state, {
+        isLogin: action.response
+      })
     default:
       return state;
   }
